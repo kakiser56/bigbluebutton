@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 # Please check bigbluebutton/bigbluebutton-html5/dev_local_deployment/README.md
 
-UPPER_DESTINATION_DIR=/usr/share/meteor
+UPPER_DESTINATION_DIR=/usr/share/meteor2
 DESTINATION_DIR=$UPPER_DESTINATION_DIR/bundle
 
 SERVICE_FILES_DIR=/usr/lib/systemd/system
