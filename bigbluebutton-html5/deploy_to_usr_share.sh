@@ -1,6 +1,7 @@
 #!/bin/sh -ex
 cd "$(dirname "$0")"
 
+
 # Please check bigbluebutton/bigbluebutton-html5/dev_local_deployment/README.md
 
 UPPER_DESTINATION_DIR=/usr/share/meteor
