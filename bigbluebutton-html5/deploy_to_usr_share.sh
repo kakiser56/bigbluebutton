@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 # Please check bigbluebutton/bigbluebutton-html5/dev_local_deployment/README.md
 
-UPPER_DESTINATION_DIR=/usr/share/meteor2
+UPPER_DESTINATION_DIR=/usr/share/meteor
 DESTINATION_DIR=$UPPER_DESTINATION_DIR/bundle
 
 SERVICE_FILES_DIR=/usr/lib/systemd/system
@@ -15,9 +15,10 @@ if [ ! -d "$LOCAL_PACKAGING_DIR" ]; then
   exit
 fi
 
-sudo rm -rf "$UPPER_DESTINATION_DIR"
-sudo mkdir -p "$UPPER_DESTINATION_DIR"
-sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"
+# comment out the below so as to not interfer with the existing html5 client
+#sudo rm -rf "$UPPER_DESTINATION_DIR"
+#sudo mkdir -p "$UPPER_DESTINATION_DIR"
+#sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"
 
 # the next 5 lines may be temporarily commented out if you are sure you are not tweaking the required node_modules after first use of the script. This will save a minute or two during the run of the script
 if [ -d "node_modules" ]; then
@@ -29,7 +30,7 @@ meteor npm ci --production
 sudo chmod 777 /usr/share/meteor
 METEOR_DISABLE_OPTIMISTIC_CACHING=1 meteor build $UPPER_DESTINATION_DIR --architecture os.linux.x86_64 --allow-superuser --directory
 
-sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"/
+#sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"/
 echo 'stage3'
 
 
