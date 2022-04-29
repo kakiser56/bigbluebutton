@@ -19,6 +19,9 @@ fi
 #sudo rm -rf "$UPPER_DESTINATION_DIR"
 #sudo mkdir -p "$UPPER_DESTINATION_DIR"
 #sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"
+sudo rm -rf "$DESTINATION_DIR"
+sudo mkdir -p "$DESTINATION_DIR"
+sudo chown -R meteor:meteor "$DESTINATION_DIR"
 
 # the next 5 lines may be temporarily commented out if you are sure you are not tweaking the required node_modules after first use of the script. This will save a minute or two during the run of the script
 if [ -d "node_modules" ]; then
