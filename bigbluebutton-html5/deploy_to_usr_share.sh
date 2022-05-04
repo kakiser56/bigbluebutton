@@ -13,9 +13,9 @@ if [ ! -d "$LOCAL_PACKAGING_DIR" ]; then
   exit
 fi
 
-//sudo rm -rf "$UPPER_DESTINATION_DIR"
-//sudo mkdir -p "$UPPER_DESTINATION_DIR"
-//sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"
+#sudo rm -rf "$UPPER_DESTINATION_DIR"
+#sudo mkdir -p "$UPPER_DESTINATION_DIR"
+#sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"
 sudo rm -rf "$DESTINATION_DIR"
 sudo mkdir -p "$DESTINATION_DIR"
 sudo chown -R meteor:meteor "$DESTINATION_DIR"
