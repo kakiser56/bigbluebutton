@@ -7,7 +7,7 @@
     "app.chat.locked": "Chat is locked, messages can't be sent",
     "app.chat.inputLabel": "Message input for chat {0}",
     "app.chat.inputPlaceholder": "Send message to {0}",
-    "app.chat.titlePublic": "Public Chat",
+    "app.chat.titlePublic": "Chat",
     "app.chat.titlePrivate": "Private Chat with {0}",
     "app.chat.partnerDisconnected": "{0} has left the meeting",
     "app.chat.closeChatLabel": "Close {0}",

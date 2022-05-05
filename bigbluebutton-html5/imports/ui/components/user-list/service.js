@@ -283,7 +283,7 @@ const getActiveChats = ({ groupChatsMessages, groupChats, users }) => {
 
     return {
       userId: PUBLIC_CHAT_ID,
-      name: 'Chat',
+      name: 'Public Chat',
       icon: 'group_chat',
       chatId: PUBLIC_CHAT_ID,
       unreadCounter: unreadMessagesCount,
