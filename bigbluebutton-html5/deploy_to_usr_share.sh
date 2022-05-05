@@ -28,7 +28,7 @@ meteor reset
 meteor npm ci --production
 
 sudo chmod 777 /usr/share/meteor
-METEOR_DISABLE_OPTIMISTIC_CACHING=1 meteor build $UPPER_DESTINATION_DIR --architecture os.linux.x86_64 --allow-superuser --directory
+METEOR_DISABLE_OPTIMISTIC_CACHING=1 meteor build $UPPER_DESTINATION_DIR --debug --architecture os.linux.x86_64 --allow-superuser --directory
 
 sudo chown -R meteor:meteor "$UPPER_DESTINATION_DIR"/
 echo 'stage3'
