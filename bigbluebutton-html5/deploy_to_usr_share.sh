@@ -1,6 +1,20 @@
 #!/bin/sh -ex
 
 # Please check bigbluebutton/bigbluebutton-html5/dev_local_deployment/README.md
+echo 'before stopping bbb-html5:'
+ps -ef | grep node-
+sudo netstat -netlp | grep -i node
+echo 'before stopping bbb-html5:'
+echo '_____________'
+
+sudo systemctl stop bbb-html5
+
+sleep 5s
+echo 'after stopping bbb-html5:'
+ps -ef | grep node-
+sudo netstat -netlp | grep -i node
+echo 'after stopping bbb-html5:'
+echo '_____________'
 
 UPPER_DESTINATION_DIR=/usr/share/meteor
 DESTINATION_DIR=$UPPER_DESTINATION_DIR/bundle
@@ -83,20 +97,6 @@ sudo cp $LOCAL_PACKAGING_DIR/bbb-html5-backend@.service "$SERVICE_FILES_DIR"/bbb
 
 sudo systemctl daemon-reload
 
-echo 'before stopping bbb-html5:'
-ps -ef | grep node-
-sudo netstat -netlp | grep -i node
-echo 'before stopping bbb-html5:'
-echo '_____________'
-
-sudo systemctl stop bbb-html5
-
-sleep 5s
-echo 'after stopping bbb-html5:'
-ps -ef | grep node-
-sudo netstat -netlp | grep -i node
-echo 'after stopping bbb-html5:'
-echo '_____________'
 
 echo 'starting bbb-html5'
 sudo systemctl start bbb-html5
