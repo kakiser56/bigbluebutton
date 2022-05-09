@@ -51,6 +51,9 @@ const SidebarNavigation = (props) => {
 
   const setSidebarNavWidth = (dWidth) => {
     const newWidth = resizeStartWidth + dWidth;
+    if (newWidth > 150) {
+      newWidth = 150;
+    }
 
     setResizableWidth(newWidth);
 
