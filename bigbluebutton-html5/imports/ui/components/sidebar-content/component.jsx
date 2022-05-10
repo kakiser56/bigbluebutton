@@ -11,6 +11,7 @@ import WaitingUsersPanel from '/imports/ui/components/waiting-users/container';
 import ErrorBoundary from '/imports/ui/components/error-boundary/component';
 import FallbackView from '/imports/ui/components/fallback-errors/fallback-view/component';
 import { styles } from '/imports/ui/components/app/styles';
+import logger from '/imports/startup/client/logger';
 
 const propTypes = {
   top: PropTypes.number.isRequired,
@@ -48,6 +49,11 @@ const SidebarContent = (props) => {
     contextDispatch,
     sidebarContentPanel,
   } = props;
+
+  logger.debug(
+    { logCode: 'left def' },
+    'My left is defined as ' + left
+  );
 
   const [resizableWidth, setResizableWidth] = useState(width);
   const [resizableHeight, setResizableHeight] = useState(height);

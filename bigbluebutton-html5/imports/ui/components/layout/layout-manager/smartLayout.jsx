@@ -210,10 +210,6 @@ class SmartLayout extends Component {
         maxWidth = sidebarNavMaxWidth;
       }
     }
-    logger.debug(
-      { logCode: 'width def' },
-      'Sidebar Nav width is ' + width
-    );
   
     return {
       minWidth,
@@ -245,10 +241,6 @@ class SmartLayout extends Component {
     let top = sidebarNavTop + this.bannerAreaHeight();
 
     if (deviceType === DEVICE_TYPE.MOBILE) top = navBarHeight + this.bannerAreaHeight();
-    logger.debug(
-      { logCode: 'width def' },
-      'Sidebar Content left is ' + sidebarNavLeft
-    );
 
     return {
       top,
