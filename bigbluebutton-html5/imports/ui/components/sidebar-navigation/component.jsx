@@ -110,7 +110,7 @@ const SidebarNavigation = (props) => {
         left,
         right,
         zIndex,
-        myWidth,
+        width: myWidth,
         height,
       }}
     >
