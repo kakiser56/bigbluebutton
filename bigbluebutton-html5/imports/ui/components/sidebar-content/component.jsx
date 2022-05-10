@@ -50,12 +50,13 @@ const SidebarContent = (props) => {
     sidebarContentPanel,
   } = props;
 
-  if (left > 150) {
-    left = 150;
+  let myLeft = left;
+  if (myLeft > 150) {
+    myLeft = 150;
   }
   logger.debug(
     { logCode: 'left def' },
-    'My left is defined as ' + left
+    'My left is defined as ' + myLeft
   );
 
 
@@ -126,7 +127,7 @@ const SidebarContent = (props) => {
       style={{
         position: 'absolute',
         top,
-        left,
+        myLeft,
         right,
         zIndex,
         width,

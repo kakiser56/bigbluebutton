@@ -39,31 +39,29 @@ const SidebarNavigation = (props) => {
     contextDispatch,
   } = props;
 
-  if (width > 150) {
-    width = 150;
+  let myWidth = width;
+  if (myWidth > 150) {
+    myWidth = 150;
   }
 
   logger.debug(
     { logCode: 'width def' },
-    'My width is defined as ' + width
+    'My width is defined as ' + myWidth
   );
 
-  const [resizableWidth, setResizableWidth] = useState(width);
+  const [resizableWidth, setResizableWidth] = useState(myWidth);
   const [isResizing, setIsResizing] = useState(false);
   const [resizeStartWidth, setResizeStartWidth] = useState(0);
 
   useEffect(() => {
-    if (!isResizing) setResizableWidth(width);
-  }, [width]);
+    if (!isResizing) setResizableWidth(myWidth);
+  }, [myWidth]);
 
   useEffect(() => {
   }, [resizeStartWidth]);
 
   const setSidebarNavWidth = (dWidth) => {
     const newWidth = resizeStartWidth + dWidth;
-    if (newWidth > 150) {
-      newWidth = 150;
-    }
 
     setResizableWidth(newWidth);
 
@@ -82,7 +80,7 @@ const SidebarNavigation = (props) => {
       minWidth={minWidth}
       maxWidth={maxWidth}
       size={{
-        width,
+        myWidth,
         height,
       }}
       enable={{
@@ -112,7 +110,7 @@ const SidebarNavigation = (props) => {
         left,
         right,
         zIndex,
-        width,
+        myWidth,
         height,
       }}
     >
