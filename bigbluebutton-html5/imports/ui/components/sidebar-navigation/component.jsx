@@ -38,6 +38,8 @@ const SidebarNavigation = (props) => {
     contextDispatch,
   } = props;
 
+  console.log('My width is defined as ' + width);
+  
   const [resizableWidth, setResizableWidth] = useState(width);
   const [isResizing, setIsResizing] = useState(false);
   const [resizeStartWidth, setResizeStartWidth] = useState(0);
