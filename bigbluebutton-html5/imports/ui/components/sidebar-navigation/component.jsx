@@ -80,7 +80,7 @@ const SidebarNavigation = (props) => {
       minWidth={minWidth}
       maxWidth={maxWidth}
       size={{
-        myWidth,
+        width: myWidth,
         height,
       }}
       enable={{
