@@ -39,6 +39,10 @@ const SidebarNavigation = (props) => {
     contextDispatch,
   } = props;
 
+  if (width > 150) {
+    width = 150;
+  }
+
   logger.debug(
     { logCode: 'width def' },
     'My width is defined as ' + width

@@ -50,10 +50,14 @@ const SidebarContent = (props) => {
     sidebarContentPanel,
   } = props;
 
+  if (left > 150) {
+    left = 150;
+  }
   logger.debug(
     { logCode: 'left def' },
     'My left is defined as ' + left
   );
+
 
   const [resizableWidth, setResizableWidth] = useState(width);
   const [resizableHeight, setResizableHeight] = useState(height);
