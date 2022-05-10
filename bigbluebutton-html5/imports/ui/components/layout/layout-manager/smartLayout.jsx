@@ -6,6 +6,7 @@ import { INITIAL_INPUT_STATE } from '/imports/ui/components/layout/initState';
 import {
   DEVICE_TYPE, ACTIONS, PANELS, CAMERADOCK_POSITION,
 } from '/imports/ui/components/layout/enums';
+import logger from '/imports/startup/client/logger';
 
 const windowWidth = () => window.document.documentElement.clientWidth;
 const windowHeight = () => window.document.documentElement.clientHeight;
@@ -209,6 +210,11 @@ class SmartLayout extends Component {
         maxWidth = sidebarNavMaxWidth;
       }
     }
+    logger.debug(
+      { logCode: 'width def' },
+      'Sidebar Nav width is ' + width
+    );
+  
     return {
       minWidth,
       width,
@@ -239,6 +245,10 @@ class SmartLayout extends Component {
     let top = sidebarNavTop + this.bannerAreaHeight();
 
     if (deviceType === DEVICE_TYPE.MOBILE) top = navBarHeight + this.bannerAreaHeight();
+    logger.debug(
+      { logCode: 'width def' },
+      'Sidebar Content left is ' + sidebarNavLeft
+    );
 
     return {
       top,
