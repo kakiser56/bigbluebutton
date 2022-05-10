@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Resizable from 're-resizable';
 import { ACTIONS } from '../layout/enums';
 import UserListContainer from '../user-list/container';
+import logger from '/imports/startup/client/logger';
 
 const propTypes = {
   top: PropTypes.number.isRequired,
@@ -38,8 +39,11 @@ const SidebarNavigation = (props) => {
     contextDispatch,
   } = props;
 
-  console.log('My width is defined as ' + width);
-  
+  logger.debug(
+    { logCode: 'width def' },
+    'My width is defined as ' + width
+  );
+
   const [resizableWidth, setResizableWidth] = useState(width);
   const [isResizing, setIsResizing] = useState(false);
   const [resizeStartWidth, setResizeStartWidth] = useState(0);
