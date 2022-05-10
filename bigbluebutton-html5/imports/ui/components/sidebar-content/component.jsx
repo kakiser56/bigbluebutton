@@ -56,7 +56,7 @@ const SidebarContent = (props) => {
   }
   logger.debug(
     { logCode: 'left def' },
-    'My left is defined as ' + myLeft
+    'My left is defined as ' + myLeft + ' and top is ' + top
   );
 
 
@@ -127,7 +127,7 @@ const SidebarContent = (props) => {
       style={{
         position: 'absolute',
         top,
-        myLeft,
+        left: myLeft,
         right,
         zIndex,
         width,
