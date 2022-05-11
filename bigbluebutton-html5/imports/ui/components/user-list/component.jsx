@@ -6,6 +6,7 @@ import { styles } from './styles.scss';
 import CustomLogo from './custom-logo/component';
 import UserContentContainer from './user-list-content/container';
 import ScreenshareButtonContainer from '/imports/ui/components/actions-bar/screenshare/container';
+import logger from '/imports/startup/client/logger';
 
 const propTypes = {
   compact: PropTypes.bool,
@@ -26,6 +27,11 @@ const propTypes = {
 const defaultProps = {
   compact: false,
 };
+
+logger.debug(
+  { logCode: 'presenter' },
+  'I am presenter is  ' + amIPresenter
+);
 
 class UserList extends PureComponent {
   render() {
