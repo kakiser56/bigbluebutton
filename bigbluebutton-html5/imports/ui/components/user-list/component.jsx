@@ -28,10 +28,10 @@ const defaultProps = {
   compact: false,
 };
 
-logger.debug(
-  { logCode: 'presenter' },
-  'I am presenter is  ' + amIPresenter
-);
+//logger.debug(
+  //{ logCode: 'presenter' },
+  //'I am presenter is  ' + amIPresenter
+//);
 
 class UserList extends PureComponent {
   render() {
