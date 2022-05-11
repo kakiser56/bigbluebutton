@@ -5,6 +5,7 @@ import injectWbResizeEvent from '/imports/ui/components/presentation/resize-wrap
 import { styles } from './styles.scss';
 import CustomLogo from './custom-logo/component';
 import UserContentContainer from './user-list-content/container';
+import ScreenshareButtonContainer from '/imports/ui/components/actions-bar/screenshare/container';
 
 const propTypes = {
   compact: PropTypes.bool,
@@ -18,6 +19,8 @@ const propTypes = {
   roving: PropTypes.func.isRequired,
   showBranding: PropTypes.bool.isRequired,
   requestUserInformation: PropTypes.func.isRequired,
+  amIPresenter: PropTypes.bool.isRequired,
+  isMeteorConnected: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
@@ -27,6 +30,8 @@ const defaultProps = {
 class UserList extends PureComponent {
   render() {
     const {
+      amIPresenter,
+      isMeteorConnected,
       intl,
       compact,
       setEmojiStatus,
@@ -60,6 +65,14 @@ class UserList extends PureComponent {
           }
           }
         />}
+        <div className={styles.center}>
+          <ScreenshareButtonContainer {...{
+            amIPresenter,
+            isMeteorConnected,
+          }}
+          />
+        </div>
+
       </div>
     );
   }
