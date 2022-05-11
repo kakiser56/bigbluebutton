@@ -65,14 +65,13 @@ class UserList extends PureComponent {
           }
           }
         />}
-        <div className={styles.center}>
+        {
           <ScreenshareButtonContainer {...{
             amIPresenter,
             isMeteorConnected,
           }}
-          />
-        </div>
-
+          />          
+        }
       </div>
     );
   }
