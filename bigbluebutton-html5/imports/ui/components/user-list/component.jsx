@@ -55,8 +55,9 @@ class UserList extends PureComponent {
       backgroundColor: '#1b2a3a',
       paddingTop: '5px',
       paddingBottom: '5px',
+      textAlign: 'center',
     };
-    
+
     return (
       <div className={styles.userList}>
         {
