@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Meteor } from 'meteor/meteor';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import injectWbResizeEvent from '/imports/ui/components/presentation/resize-wrapper/component';
@@ -8,7 +7,6 @@ import CustomLogo from './custom-logo/component';
 import UserContentContainer from './user-list-content/container';
 import ScreenshareButtonContainer from '/imports/ui/components/actions-bar/screenshare/container';
 import logger from '/imports/startup/client/logger';
-import Service from '/imports/ui/components/user-list/service';
 
 const propTypes = {
   compact: PropTypes.bool,
@@ -43,10 +41,9 @@ class UserList extends PureComponent {
       showBranding,
       hasBreakoutRoom,
       requestUserInformation,
+      amIPresenter,
+      isMeteorConnected,
     } = this.props;
-
-    const amIPresenter = Service.amIPresenter();
-    const isMeteorConnected = Meteor.status().connected;
 
     logger.debug(
       { logCode: 'presenter' },
