@@ -38,9 +38,12 @@ class ActionsBar extends PureComponent {
       actionsBarStyle,
       isOldMinimizeButtonEnabled,
     } = this.props;
+    logger.debug(
+      { logCode: 'presenter' },
+      'I am presenter is  ' + amIPresenter
+    );
 
     return (
-      amIPresenter ? null:
       <div
         className={styles.actionsbar}
         style={

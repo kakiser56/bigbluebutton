@@ -54,10 +54,6 @@ const SidebarContent = (props) => {
   if (myLeft > 150) {
     myLeft = 150;
   }
-  logger.debug(
-    { logCode: 'left def' },
-    'My left is defined as ' + myLeft + ' and top is ' + top
-  );
 
 
   const [resizableWidth, setResizableWidth] = useState(width);

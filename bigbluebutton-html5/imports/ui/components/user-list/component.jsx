@@ -43,13 +43,7 @@ class UserList extends PureComponent {
       requestUserInformation,
       amIPresenter,
       isMeteorConnected,
-    } = this.props;
-
-    logger.debug(
-      { logCode: 'presenter' },
-      'I am presenter is  ' + amIPresenter
-    );
-    
+    } = this.props;    
 
     let buttonStyle = {
       display: 'none',

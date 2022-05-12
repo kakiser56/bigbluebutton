@@ -44,11 +44,6 @@ const SidebarNavigation = (props) => {
     myWidth = 150;
   }
 
-  logger.debug(
-    { logCode: 'width def' },
-    'My width is defined as ' + myWidth
-  );
-
   const [resizableWidth, setResizableWidth] = useState(myWidth);
   const [isResizing, setIsResizing] = useState(false);
   const [resizeStartWidth, setResizeStartWidth] = useState(0);
