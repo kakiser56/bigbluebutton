@@ -500,7 +500,7 @@ class App extends Component {
           <NotificationsBarContainer />
           <SidebarNavigationContainer />
           <SidebarContentContainer />
-          {isPresenter ? null : <NavBarContainer main="new" />}
+          <NavBarContainer main="new" />
           {this.renderWebcamsContainer()}
           {shouldShowPresentation && !isPresenter ? <PresentationAreaContainer /> : null}
           {shouldShowScreenshare ? <ScreenshareContainer /> : null}
