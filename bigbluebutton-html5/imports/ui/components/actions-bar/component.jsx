@@ -40,7 +40,7 @@ class ActionsBar extends PureComponent {
     } = this.props;
 
     return (
-      amIPresenter ?
+      amIPresenter ? null:
       <div
         className={styles.actionsbar}
         style={
@@ -125,7 +125,7 @@ class ActionsBar extends PureComponent {
             )
             : null}
         </div>
-      </div> : null
+      </div>
     );
   }
 }
