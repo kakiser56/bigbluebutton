@@ -9,6 +9,7 @@ import ScreenshareButtonContainer from '/imports/ui/components/actions-bar/scree
 import AudioControlsContainer from '../audio/audio-controls/container';
 import JoinVideoOptionsContainer from '../video-provider/video-button/container';
 import PresentationOptionsContainer from './presentation-options/component';
+import logger from '/imports/startup/client/logger';
 
 class ActionsBar extends PureComponent {
   render() {
