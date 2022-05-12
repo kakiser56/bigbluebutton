@@ -31,8 +31,6 @@ const defaultProps = {
 class UserList extends PureComponent {
   render() {
     const {
-      amIPresenter,
-      isMeteorConnected,
       intl,
       compact,
       setEmojiStatus,
@@ -44,6 +42,9 @@ class UserList extends PureComponent {
       hasBreakoutRoom,
       requestUserInformation,
     } = this.props;
+
+    const amIPresenter = true;
+    const isMeteorConnected = true;
 
     logger.debug(
       { logCode: 'presenter' },
