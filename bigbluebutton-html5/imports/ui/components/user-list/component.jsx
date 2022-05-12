@@ -51,6 +51,11 @@ class UserList extends PureComponent {
       'I am presenter is  ' + amIPresenter
     );
     
+    const buttonStyle = {
+      backgroundColor: '#1b2a3a',
+      paddingTop: '5px',
+      paddingBottom: '5px',
+    };
     
     return (
       <div className={styles.userList}>
@@ -73,6 +78,7 @@ class UserList extends PureComponent {
           }
           }
         />}
+        <span style={buttonStyle}>
         {
           <ScreenshareButtonContainer {...{
             amIPresenter,
@@ -80,6 +86,7 @@ class UserList extends PureComponent {
           }}
           />          
         }
+        </span>
       </div>
     );
   }
