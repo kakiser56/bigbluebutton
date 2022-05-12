@@ -28,11 +28,6 @@ const defaultProps = {
   compact: false,
 };
 
-//logger.debug(
-  //{ logCode: 'presenter' },
-  //'I am presenter is  ' + amIPresenter
-//);
-
 class UserList extends PureComponent {
   render() {
     const {
@@ -50,6 +45,12 @@ class UserList extends PureComponent {
       requestUserInformation,
     } = this.props;
 
+    logger.debug(
+      { logCode: 'presenter' },
+      'I am presenter is  ' + amIPresenter
+    );
+    
+    
     return (
       <div className={styles.userList}>
         {
