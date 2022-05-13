@@ -180,7 +180,7 @@ class NavBar extends Component {
       mountModal,
       presentationTitle,
       amIModerator,
-      isPresenter,
+      amIPresenter,
       style,
       main,
       sidebarNavigation,
@@ -188,7 +188,7 @@ class NavBar extends Component {
 
     logger.debug(
       { logCode: 'presenter' },
-      'Nav Bar am presenter is  ' + isPresenter
+      'Nav Bar am presenter is  ' + amIPresenter
     );
 
     const hasNotification = hasUnreadMessages || hasUnreadNotes;
@@ -210,7 +210,7 @@ class NavBar extends Component {
     });
 
     return (
-      isPresenter ? null :
+      amIPresenter ? null :
       <header
         className={styles.navbar}
         style={

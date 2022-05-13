@@ -56,6 +56,7 @@ const NavBarContainer = ({ children, ...props }) => {
 
   const currentUser = users[Auth.meetingID][Auth.userID];
   const amIModerator = currentUser.role === ROLE_MODERATOR;
+  const amIPresenter = Service.amIPresenter()
 
   const hideNavBar = getFromUserSettings('bbb_hide_nav_bar', false);
 
@@ -65,6 +66,7 @@ const NavBarContainer = ({ children, ...props }) => {
     <NavBar
       {...{
         amIModerator,
+        amIPresenter,
         hasUnreadMessages,
         hasUnreadNotes,
         sidebarNavPanel,
