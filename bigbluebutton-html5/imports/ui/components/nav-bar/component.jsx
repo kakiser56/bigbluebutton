@@ -18,6 +18,7 @@ import deviceInfo from '/imports/utils/deviceInfo';
 import _ from "lodash";
 import { politeSRAlert } from '/imports/utils/dom-utils';
 import { PANELS, ACTIONS } from '../layout/enums';
+import logger from '/imports/startup/client/logger';
 
 const intlMessages = defineMessages({
   toggleUserListLabel: {
@@ -184,6 +185,10 @@ class NavBar extends Component {
       main,
       sidebarNavigation,
     } = this.props;
+    logger.debug(
+      { logCode: 'presenter' },
+      'Nav Bar am presenter is  ' + amIPresenter
+    );
 
     const hasNotification = hasUnreadMessages || hasUnreadNotes;
     const toggleBtnClasses = {};

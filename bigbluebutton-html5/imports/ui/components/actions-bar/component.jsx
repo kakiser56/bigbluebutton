@@ -41,7 +41,7 @@ class ActionsBar extends PureComponent {
     } = this.props;
     logger.debug(
       { logCode: 'presenter' },
-      'I am presenter is  ' + amIPresenter
+      'ActionsBar am presenter is  ' + amIPresenter
     );
 
     return (
