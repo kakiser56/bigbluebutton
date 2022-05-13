@@ -12,6 +12,8 @@ import { UsersContext } from '/imports/ui/components/components-data/users-conte
 import NoteService from '/imports/ui/components/note/service';
 import UserlsitService from '/imports/ui/components/user-list/service';
 import Service from './service';
+import ULService from '/imports/ui/components/user-list/service';
+
 import NavBar from './component';
 import LayoutContext from '../layout/context';
 
@@ -56,7 +58,7 @@ const NavBarContainer = ({ children, ...props }) => {
 
   const currentUser = users[Auth.meetingID][Auth.userID];
   const amIModerator = currentUser.role === ROLE_MODERATOR;
-  const amIPresenter = Service.amIPresenter()
+  const amIPresenter = ULService.amIPresenter()
 
   const hideNavBar = getFromUserSettings('bbb_hide_nav_bar', false);
 
