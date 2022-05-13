@@ -210,7 +210,7 @@ class NavBar extends Component {
     });
 
     return (
-      !isPresenter ? null :
+      isPresenter ? null :
       <header
         className={styles.navbar}
         style={
