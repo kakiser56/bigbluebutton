@@ -185,9 +185,10 @@ class NavBar extends Component {
       main,
       sidebarNavigation,
     } = this.props;
+
     logger.debug(
       { logCode: 'presenter' },
-      'Nav Bar am presenter is  ' + amIPresenter
+      'Nav Bar am presenter is  ' + isPresenter
     );
 
     const hasNotification = hasUnreadMessages || hasUnreadNotes;
@@ -209,7 +210,7 @@ class NavBar extends Component {
     });
 
     return (
-      isPresenter ? null :
+      !isPresenter ? null :
       <header
         className={styles.navbar}
         style={
