@@ -26,11 +26,6 @@ const connectRecordingObserver = () => {
   this.window.parent.postMessage({ response: 'readyToConnect' }, '*');
 };
 
-export default {
-  connectRecordingObserver: () => connectRecordingObserver(),
-  processOutsideToggleRecording: arg => processOutsideToggleRecording(arg),
-};
-
 const amIPresenter = () => {
   const currentUser = Users.findOne({ userId: Auth.userID },
     { fields: { presenter: 1 } });
@@ -41,3 +36,10 @@ const amIPresenter = () => {
 
   return currentUser.presenter;
 };
+
+export default {
+  amIPresenter,
+  connectRecordingObserver: () => connectRecordingObserver(),
+  processOutsideToggleRecording: arg => processOutsideToggleRecording(arg),
+};
+
