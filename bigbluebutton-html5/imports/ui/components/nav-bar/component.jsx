@@ -179,6 +179,7 @@ class NavBar extends Component {
       mountModal,
       presentationTitle,
       amIModerator,
+      isPresenter,
       style,
       main,
       sidebarNavigation,
@@ -203,6 +204,7 @@ class NavBar extends Component {
     });
 
     return (
+      isPresenter ? null :
       <header
         className={styles.navbar}
         style={
