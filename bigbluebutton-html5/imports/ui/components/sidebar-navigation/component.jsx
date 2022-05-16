@@ -51,6 +51,11 @@ const SidebarNavigation = (props) => {
   if (myWidth > 150 && !amIPresenter) {
     myWidth = 150;
   }
+
+  if (amIPresenter) {
+    myWidth = Dimensions.get('window').width * .70;
+  }
+  
   let style = {
     position: 'absolute',
     top : top,
@@ -59,18 +64,6 @@ const SidebarNavigation = (props) => {
     zIndex : zIndex,
     width: myWidth,
     height : height,
-  }
-
-  if (amIPresenter) {
-    style = {
-      position: 'absolute',
-      top : top,
-      left : left,
-      right : right,
-      zIndex : zIndex,
-      width: myPercentage,
-      height : height,
-      };  
   }
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);

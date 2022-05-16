@@ -62,10 +62,12 @@ const SidebarContent = (props) => {
   }
 
   let myWidth = width;
+  // if presenting, make chat window 70% of window width, and left to be 30% over
   if (amIPresenter) {
-    myLeft = 180;
-    myWidth = 420;
+    myLeft = Dimensions.get('window').width * .30;
+    myWidth = Dimensions.get('window').width * .70;
   }
+
   logger.debug(
     { logCode: 'presenter' },
     'SideBarContent width is  ' + myWidth + ' left is ' + myLeft
