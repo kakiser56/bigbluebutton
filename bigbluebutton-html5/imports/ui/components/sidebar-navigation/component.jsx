@@ -53,7 +53,7 @@ const SidebarNavigation = (props) => {
   }
 
   if (amIPresenter) {
-    myWidth = Dimensions.get('window').width * .30;
+    myWidth =  window.width * .30;
   }
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
