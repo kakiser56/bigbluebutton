@@ -48,11 +48,34 @@ const SidebarContent = (props) => {
     resizableEdge,
     contextDispatch,
     sidebarContentPanel,
+    amIPresenter,
   } = props;
 
   let myLeft = left;
   if (myLeft > 150) {
     myLeft = 150;
+  }
+
+  let style = {
+    position: 'absolute',
+    top : top,
+    left : myLeft,
+    right : right,
+    zIndex : zIndex,
+    width: width,
+    height : height,
+  }
+  
+  if (amIPresenter) {
+    style = {
+      position: 'absolute',
+      top : top,
+      left : '30%',
+      right : right,
+      zIndex : zIndex,
+      width: width,
+      height : height,
+      };  
   }
 
 
