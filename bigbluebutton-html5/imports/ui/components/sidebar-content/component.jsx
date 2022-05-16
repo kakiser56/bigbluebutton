@@ -150,13 +150,7 @@ const SidebarContent = (props) => {
         setResizeStartHeight(0);
       }}
       style={{
-        position: 'absolute',
-        top,
-        left: myLeft,
-        right,
-        zIndex,
-        width,
-        height,
+        style
       }}
     >
       {sidebarContentPanel === PANELS.CHAT
