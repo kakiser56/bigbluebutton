@@ -60,7 +60,6 @@ const SidebarContent = (props) => {
   if (myLeft > 150) {
     myLeft = 150;
   }
-  let myPercentage = '30%';
 
   let style = {
     position: 'absolute',
@@ -73,13 +72,14 @@ const SidebarContent = (props) => {
   }
   
   if (amIPresenter) {
+    myLeft = 180;
     style = {
       position: 'absolute',
       top : top,
-      left : myPercentage,
+      left : myLeft,
       right : right,
       zIndex : zIndex,
-      width: '70%',
+      width: 420,
       height : height,
       };  
   }

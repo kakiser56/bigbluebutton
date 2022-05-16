@@ -46,7 +46,7 @@ const SidebarNavigation = (props) => {
   );
 
   let myWidth = width;
-  let myPercentage = '30%';
+  let myPercentage = 180;
 
   if (myWidth > 150 && !amIPresenter) {
     myWidth = 150;
@@ -60,7 +60,7 @@ const SidebarNavigation = (props) => {
     width: myWidth,
     height : height,
   }
-  
+
   if (amIPresenter) {
     style = {
       position: 'absolute',
