@@ -51,10 +51,16 @@ const SidebarContent = (props) => {
     amIPresenter,
   } = props;
 
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarContent am presenter is  ' + amIPresenter
+  );
+
   let myLeft = left;
   if (myLeft > 150) {
     myLeft = 150;
   }
+  let myPercentage = '30%';
 
   let style = {
     position: 'absolute',
@@ -70,10 +76,10 @@ const SidebarContent = (props) => {
     style = {
       position: 'absolute',
       top : top,
-      left : '30%',
+      left : myPercentage,
       right : right,
       zIndex : zIndex,
-      width: width,
+      width: '70%',
       height : height,
       };  
   }
