@@ -61,31 +61,14 @@ const SidebarContent = (props) => {
     myLeft = 150;
   }
 
-  let style = {
-    position: 'absolute',
-    top : top,
-    left : myLeft,
-    right : right,
-    zIndex : zIndex,
-    width: width,
-    height : height,
-  }
-  
+  let myWidth = width;
   if (amIPresenter) {
     myLeft = 180;
-    style = {
-      position: 'absolute',
-      top : top,
-      left : myLeft,
-      right : right,
-      zIndex : zIndex,
-      width: 420,
-      height : height,
-      };  
+    myWidth = 420;
   }
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarContent top is  ' + style.top + ' left is ' + style.left
+    'SideBarContent width is  ' + myWidth + ' left is ' + myLeft
   );
 
 
@@ -154,7 +137,13 @@ const SidebarContent = (props) => {
         setResizeStartHeight(0);
       }}
       style={{
-        style
+        position: 'absolute',
+        top : top,
+        left : myLeft,
+        right : right,
+        zIndex : zIndex,
+        width: myWidth,
+        height : height,    
       }}
     >
       {sidebarContentPanel === PANELS.CHAT
