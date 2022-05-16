@@ -53,17 +53,7 @@ const SidebarNavigation = (props) => {
   }
 
   if (amIPresenter) {
-    myWidth = Dimensions.get('window').width * .70;
-  }
-  
-  let style = {
-    position: 'absolute',
-    top : top,
-    left : left,
-    right : right,
-    zIndex : zIndex,
-    width: myWidth,
-    height : height,
+    myWidth = Dimensions.get('window').width * .30;
   }
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
@@ -121,7 +111,15 @@ const SidebarNavigation = (props) => {
         setIsResizing(false);
         setResizeStartWidth(0);
       }}
-      style={{style}}
+      style={{
+        position: 'absolute',
+        top : top,
+        left : left,
+        right : right,
+        zIndex : zIndex,
+        width: myWidth,
+        height : height,    
+      }}
     >
       <UserListContainer />
     </Resizable>
