@@ -83,6 +83,10 @@ const SidebarContent = (props) => {
       height : height,
       };  
   }
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarContent top is  ' + style.top + ' left is ' + style.left
+  );
 
 
   const [resizableWidth, setResizableWidth] = useState(width);
