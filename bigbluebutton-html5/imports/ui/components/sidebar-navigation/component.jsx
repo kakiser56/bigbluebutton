@@ -40,21 +40,19 @@ const SidebarNavigation = (props) => {
     amIPresenter,
   } = props;
 
-  logger.debug(
-    { logCode: 'presenter' },
-    'SideBarNavigation am presenter is  ' + amIPresenter
-  );
-
   let myWidth = width;
-  let myPercentage = 180;
 
   if (myWidth > 150 && !amIPresenter) {
     myWidth = 150;
   }
 
   if (amIPresenter) {
-    myWidth =  window.width * .30;
+    myWidth =  window.innerWidth * .30;
   }
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarNavigation my width is ' + myWidth
+  );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
   const [isResizing, setIsResizing] = useState(false);
