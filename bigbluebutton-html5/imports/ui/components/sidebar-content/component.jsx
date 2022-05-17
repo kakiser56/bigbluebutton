@@ -82,10 +82,10 @@ const SidebarContent = (props) => {
 
   useEffect(() => {
     if (!isResizing) {
-      setResizableWidth(width);
+      setResizableWidth(myWidth);
       setResizableHeight(height);
     }
-  }, [width, height]);
+  }, [myWidth, height]);
 
   useEffect(() => {
   }, [resizeStartWidth, resizeStartHeight]);
@@ -108,7 +108,7 @@ const SidebarContent = (props) => {
     });
   };
 
-  const smallSidebar = width < (maxWidth / 2);
+  const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
     <Resizable
