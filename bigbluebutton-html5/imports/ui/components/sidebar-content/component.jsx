@@ -70,7 +70,7 @@ const SidebarContent = (props) => {
 
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarContent width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
+    'SideBarContent original width is ' + width + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
   );
 
 
@@ -117,7 +117,7 @@ const SidebarContent = (props) => {
       minHeight={minHeight}
       maxHeight={maxHeight}
       size={{
-        width,
+        myWidth,
         height,
       }}
       enable={{
