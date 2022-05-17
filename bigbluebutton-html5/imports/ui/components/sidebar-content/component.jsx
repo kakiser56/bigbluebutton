@@ -117,7 +117,7 @@ const SidebarContent = (props) => {
       minHeight={minHeight}
       maxHeight={maxHeight}
       size={{
-        myWidth,
+        width: myWidth,
         height,
       }}
       enable={{
