@@ -70,7 +70,7 @@ const SidebarContent = (props) => {
 
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarContent original width is ' + width + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
+    'SideBarContent min width is ' + minWidth + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
   );
 
 
