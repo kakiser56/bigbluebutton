@@ -48,15 +48,29 @@ const SidebarContent = (props) => {
     resizableEdge,
     contextDispatch,
     sidebarContentPanel,
+    amIPresenter,
   } = props;
+
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarContent am presenter is  ' + amIPresenter
+  );
 
   let myLeft = left;
   if (myLeft > 150) {
     myLeft = 150;
   }
+
+  let myWidth = width;
+  // if presenting, make chat window 70% of window width, and left to be 30% over
+  if (amIPresenter) {
+    myLeft = window.innerWidth * .30;
+    myWidth = window.innerWidth * .70;
+  }
+
   logger.debug(
-    { logCode: 'left def' },
-    'My left is defined as ' + myLeft + ' and top is ' + top
+    { logCode: 'presenter' },
+    'SideBarContent original width is ' + width + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
   );
 
 
@@ -68,10 +82,10 @@ const SidebarContent = (props) => {
 
   useEffect(() => {
     if (!isResizing) {
-      setResizableWidth(width);
+      setResizableWidth(myWidth);
       setResizableHeight(height);
     }
-  }, [width, height]);
+  }, [myWidth, height]);
 
   useEffect(() => {
   }, [resizeStartWidth, resizeStartHeight]);
@@ -94,7 +108,7 @@ const SidebarContent = (props) => {
     });
   };
 
-  const smallSidebar = width < (maxWidth / 2);
+  const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
     <Resizable
@@ -103,7 +117,7 @@ const SidebarContent = (props) => {
       minHeight={minHeight}
       maxHeight={maxHeight}
       size={{
-        width,
+        width: myWidth,
         height,
       }}
       enable={{
@@ -126,12 +140,12 @@ const SidebarContent = (props) => {
       }}
       style={{
         position: 'absolute',
-        top,
-        left: myLeft,
-        right,
-        zIndex,
-        width,
-        height,
+        top : top,
+        left : myLeft,
+        right : right,
+        zIndex : zIndex,
+        width: myWidth,
+        height : height,    
       }}
     >
       {sidebarContentPanel === PANELS.CHAT

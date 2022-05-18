@@ -28,16 +28,9 @@ const defaultProps = {
   compact: false,
 };
 
-//logger.debug(
-  //{ logCode: 'presenter' },
-  //'I am presenter is  ' + amIPresenter
-//);
-
 class UserList extends PureComponent {
   render() {
     const {
-      amIPresenter,
-      isMeteorConnected,
       intl,
       compact,
       setEmojiStatus,
@@ -48,7 +41,21 @@ class UserList extends PureComponent {
       showBranding,
       hasBreakoutRoom,
       requestUserInformation,
-    } = this.props;
+      amIPresenter,
+      isMeteorConnected,
+    } = this.props;    
+
+    let buttonStyle = {
+      display: 'none',
+    }
+    if (amIPresenter) {
+      buttonStyle = {
+        backgroundColor: '#1b2a3a',
+        paddingTop: '5px',
+        paddingBottom: '5px',
+        textAlign: 'center',
+      };  
+    }
 
     return (
       <div className={styles.userList}>
@@ -71,6 +78,7 @@ class UserList extends PureComponent {
           }
           }
         />}
+        <span style={buttonStyle}>
         {
           <ScreenshareButtonContainer {...{
             amIPresenter,
@@ -78,6 +86,7 @@ class UserList extends PureComponent {
           }}
           />          
         }
+        </span>
       </div>
     );
   }

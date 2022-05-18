@@ -37,16 +37,21 @@ const SidebarNavigation = (props) => {
     isResizable,
     resizableEdge,
     contextDispatch,
+    amIPresenter,
   } = props;
 
   let myWidth = width;
-  if (myWidth > 150) {
+
+  if (myWidth > 150 && !amIPresenter) {
     myWidth = 150;
   }
 
+  if (amIPresenter) {
+    myWidth =  window.innerWidth * .30;
+  }
   logger.debug(
-    { logCode: 'width def' },
-    'My width is defined as ' + myWidth
+    { logCode: 'presenter' },
+    'SideBarNavigation my width is ' + myWidth
   );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
@@ -106,12 +111,12 @@ const SidebarNavigation = (props) => {
       }}
       style={{
         position: 'absolute',
-        top,
-        left,
-        right,
-        zIndex,
+        top : top,
+        left : left,
+        right : right,
+        zIndex : zIndex,
         width: myWidth,
-        height,
+        height : height,    
       }}
     >
       <UserListContainer />

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import getFromUserSettings from '/imports/ui/services/users-settings';
 import Service from '/imports/ui/components/user-list/service';
@@ -34,5 +35,7 @@ export default withTracker(({ compact }) => (
     hasPrivateChatBetweenUsers: Service.hasPrivateChatBetweenUsers,
     toggleUserLock: Service.toggleUserLock,
     requestUserInformation: Service.requestUserInformation,
+    amIPresenter : Service.amIPresenter(),
+    isMeteorConnected : Meteor.status().connected  
   }
 ))(UserListContainer);

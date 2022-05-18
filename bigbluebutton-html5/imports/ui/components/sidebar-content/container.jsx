@@ -1,6 +1,8 @@
 import React from 'react';
 import SidebarContent from './component';
 import { LayoutContextFunc } from '../layout/context';
+// borrow this for amIPresenter
+import Service from '/imports/ui/components/user-list/service';
 
 const SidebarContentContainer = (props) => {
   const { layoutContextState, layoutContextDispatch } = props;
@@ -10,12 +12,13 @@ const SidebarContentContainer = (props) => {
   const { sidebarContent: sidebarContentInput } = input;
   const { sidebarContentPanel } = sidebarContentInput;
   const { sidebarContent } = output;
+  const amIPresenter = Service.amIPresenter();
 
   if (sidebarContent.display === false) return null;
 
   return (
     <SidebarContent
-      {...sidebarContent}
+      {...{amIPresenter, ...sidebarContent}}
       contextDispatch={layoutContextDispatch}
       sidebarContentPanel={sidebarContentPanel}
     />

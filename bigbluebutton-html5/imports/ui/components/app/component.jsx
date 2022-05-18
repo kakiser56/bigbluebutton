@@ -502,7 +502,7 @@ class App extends Component {
           <SidebarContentContainer />
           <NavBarContainer main="new" />
           {this.renderWebcamsContainer()}
-          {shouldShowPresentation ? <PresentationAreaContainer /> : null}
+          {shouldShowPresentation && !isPresenter ? <PresentationAreaContainer /> : null}
           {shouldShowScreenshare ? <ScreenshareContainer /> : null}
           {
             shouldShowExternalVideo
@@ -527,7 +527,7 @@ class App extends Component {
           <ManyWebcamsNotifier />
           <PollingContainer />
           <ModalContainer />
-          {this.renderActionsBar()}
+          {isPresenter ? null : this.renderActionsBar()}
           {customStyleUrl ? <link rel="stylesheet" type="text/css" href={customStyleUrl} /> : null}
           {customStyle ? <link rel="stylesheet" type="text/css" href={`data:text/css;charset=UTF-8,${encodeURIComponent(customStyle)}`} /> : null}
         </div>
