@@ -51,7 +51,7 @@ const SidebarNavigation = (props) => {
   }
 
   let myMinWidth = minWidth;
-  if (minWidth < myWidth) {
+  if (minWidth > myWidth) {
     myMinWidth = myWidth;
   }
 
