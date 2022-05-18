@@ -49,9 +49,15 @@ const SidebarNavigation = (props) => {
   if (amIPresenter) {
     myWidth =  window.innerWidth * .30;
   }
+
+  let myMinWidth = minWidth;
+  if (minWidth < myWidth) {
+    myMinWidth = myWidth;
+  }
+
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarNavigation min width is ' + minWidth + ' width is  ' + myWidth + ' window width is ' + window.innerWidth
+    'SideBarNavigation min width is ' + myMinWidth + ' width is  ' + myWidth + ' window width is ' + window.innerWidth
   );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
@@ -82,7 +88,7 @@ const SidebarNavigation = (props) => {
 
   return (
     <Resizable
-      minWidth={minWidth}
+      minWidth={myMinWidth}
       maxWidth={maxWidth}
       size={{
         width: myWidth,

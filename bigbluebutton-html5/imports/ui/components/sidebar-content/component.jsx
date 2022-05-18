@@ -68,9 +68,14 @@ const SidebarContent = (props) => {
     myWidth = window.innerWidth * .70;
   }
 
+  let myMinWidth = minWidth;
+  if (minWidth < myWidth) {
+    myMinWidth = myWidth;
+  }
+
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarContent min width is ' + minWidth + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
+    'SideBarContent min width is ' + myMinWidth + ' width is  ' + myWidth + ' left is ' + myLeft + ' window width is ' + window.innerWidth
   );
 
 
@@ -112,7 +117,7 @@ const SidebarContent = (props) => {
 
   return (
     <Resizable
-      minWidth={minWidth}
+      minWidth={myMinWidth}
       maxWidth={maxWidth}
       minHeight={minHeight}
       maxHeight={maxHeight}
@@ -160,7 +165,7 @@ const SidebarContent = (props) => {
       {sidebarContentPanel === PANELS.CAPTIONS && <CaptionsContainer />}
       {sidebarContentPanel === PANELS.POLL
         && (
-          <div className={styles.poll} style={{ minWidth, top: '0' }} id="pollPanel">
+          <div className={styles.poll} style={{ myMinWidth, top: '0' }} id="pollPanel">
             <PollContainer smallSidebar={smallSidebar} />
           </div>
         )}
