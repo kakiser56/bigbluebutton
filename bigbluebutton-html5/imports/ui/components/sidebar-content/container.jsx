@@ -20,7 +20,7 @@ const SidebarContentContainer = (props) => {
     'SideBarContent my display is  ' + sidebarContent.display
   );
 
-  //if (sidebarContent.display === false) return null;
+  if (sidebarContent.display === false) return null;
 
   return (
     <SidebarContent
