@@ -804,7 +804,7 @@ class CustomLayout extends Component {
     layoutContextDispatch({
       type: ACTIONS.SET_SIDEBAR_NAVIGATION_OUTPUT,
       value: {
-        display: true, //input.sidebarNavigation.isOpen,
+        display: input.sidebarNavigation.isOpen,
         minWidth: sidebarNavWidth.minWidth,
         width: sidebarNavWidth.width,
         maxWidth: sidebarNavWidth.maxWidth,
@@ -832,7 +832,7 @@ class CustomLayout extends Component {
     layoutContextDispatch({
       type: ACTIONS.SET_SIDEBAR_CONTENT_OUTPUT,
       value: {
-        display: true, //input.sidebarContent.isOpen,
+        display: input.sidebarContent.isOpen,
         minWidth: sidebarContentWidth.minWidth,
         width: sidebarContentWidth.width,
         maxWidth: sidebarContentWidth.maxWidth,
