@@ -12,7 +12,7 @@ const SidebarNavigationContainer = (props) => {
   const amIPresenter = Service.amIPresenter();
   logger.debug(
     { logCode: 'Display' },
-    'SideBarNavigation my display is  ' + sidebarContent.display
+    'SideBarNavigation my display is  ' + sidebarNavigation.display
   );
 
   if (sidebarNavigation.display === false) return null;
