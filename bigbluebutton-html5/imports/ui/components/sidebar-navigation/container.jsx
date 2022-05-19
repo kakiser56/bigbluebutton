@@ -15,7 +15,7 @@ const SidebarNavigationContainer = (props) => {
     'SideBarNavigation my display is  ' + sidebarNavigation.display
   );
 
-  if (sidebarNavigation.display === false) return null;
+  //if (sidebarNavigation.display === false) return null;
 
   return (
     <SidebarNavigation
