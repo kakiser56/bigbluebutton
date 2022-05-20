@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ACTIONS } from '/imports/ui/components/layout/enums';
 import DEFAULT_VALUES from '/imports/ui/components/layout/defaultValues';
 import { INITIAL_INPUT_STATE, INITIAL_OUTPUT_STATE } from './initState';
+import logger from '/imports/startup/client/logger';
 
 // variable to debug in console log
 const debug = false;
@@ -316,6 +317,10 @@ const reducer = (state, action) => {
       };
     }
     case ACTIONS.SET_SIDEBAR_NAVIGATION_OUTPUT: {
+      logger.debug(
+        { logCode: 'set sidebar navigation output' },
+        'Action.value = ' + action.value
+      );
       const {
         display,
         minWidth,
