@@ -27,6 +27,7 @@ import {
 import { ACTIONS } from '/imports/ui/components/layout/enums';
 import deviceInfo from '/imports/utils/deviceInfo';
 import Settings from '/imports/ui/services/settings';
+import logger from '/imports/startup/client/logger';
 
 const intlMessages = defineMessages({
   screenShareLabel: {
@@ -85,6 +86,10 @@ class ScreenshareComponent extends React.Component {
       // Volume control hover toolbar
       showHoverToolBar: false,
     };
+    logger.debug(
+      { logCode: 'screen share' },
+      'In Screen Share'
+    );
 
     this.onLoadedData = this.onLoadedData.bind(this);
     this.handleAllowAutoplay = this.handleAllowAutoplay.bind(this);

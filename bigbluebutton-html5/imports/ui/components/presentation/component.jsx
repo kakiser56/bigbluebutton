@@ -24,6 +24,7 @@ import PollingContainer from '/imports/ui/components/polling/container';
 import { ACTIONS, LAYOUT_TYPE } from '../layout/enums';
 import DEFAULT_VALUES from '../layout/defaultValues';
 import browserInfo from '/imports/utils/browserInfo';
+import logger from '/imports/startup/client/logger';
 
 const intlMessages = defineMessages({
   presentationLabel: {
@@ -73,6 +74,11 @@ class Presentation extends PureComponent {
       fitToWidth: false,
       isFullscreen: false,
     };
+
+    logger.debug(
+      { logCode: 'presentation' },
+      'In Presentation'
+    );
 
     this.currentPresentationToastId = null;
 
