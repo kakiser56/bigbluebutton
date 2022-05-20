@@ -469,7 +469,7 @@ class App extends Component {
 
     logger.debug(
       { logCode: 'App' },
-      'App - should show presentation ' + shouldShowPresentation + ' is presenter ' + isPresenter + ' should show screen share ' + shouldShowScreenshare
+      'App - shouldShowPresentation && !isPresenter' + (shouldShowPresentation && !isPresenter) + ' should show screen share ' + shouldShowScreenshare
     );
 
     return (
