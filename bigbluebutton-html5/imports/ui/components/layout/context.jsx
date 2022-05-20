@@ -319,7 +319,7 @@ const reducer = (state, action) => {
     case ACTIONS.SET_SIDEBAR_NAVIGATION_OUTPUT: {
       logger.debug(
         { logCode: 'set sidebar navigation output' },
-        'Action.value = ' + action.value
+        'Action.value = ' + action.value.display
       );
       const {
         display,
