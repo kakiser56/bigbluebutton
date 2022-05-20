@@ -15,6 +15,7 @@ import Service from './service';
 
 import NavBar from './component';
 import LayoutContext from '../layout/context';
+import logger from '/imports/startup/client/logger';
 
 const PUBLIC_CONFIG = Meteor.settings.public;
 const ROLE_MODERATOR = PUBLIC_CONFIG.user.role_moderator;
@@ -62,6 +63,10 @@ const NavBarContainer = ({ children, ...props }) => {
   const hideNavBar = getFromUserSettings('bbb_hide_nav_bar', false);
 
   if (hideNavBar) return null;
+  logger.debug(
+    { logCode: 'navbar' },
+    'Rendering Nav Bar'
+  );
 
   return (
     <NavBar

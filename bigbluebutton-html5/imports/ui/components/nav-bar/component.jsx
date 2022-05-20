@@ -67,10 +67,6 @@ class NavBar extends Component {
     }
 
     this.handleToggleUserList = this.handleToggleUserList.bind(this);
-    logger.debug(
-      { logCode: 'navbar' },
-      'In Nav Bar'
-    );
 
   }
 

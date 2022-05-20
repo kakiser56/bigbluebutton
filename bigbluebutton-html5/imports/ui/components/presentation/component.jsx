@@ -75,11 +75,6 @@ class Presentation extends PureComponent {
       isFullscreen: false,
     };
 
-    logger.debug(
-      { logCode: 'presentation' },
-      'In Presentation'
-    );
-
     this.currentPresentationToastId = null;
 
     this.getSvgRef = this.getSvgRef.bind(this);

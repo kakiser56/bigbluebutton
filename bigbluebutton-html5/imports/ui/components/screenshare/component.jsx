@@ -85,10 +85,6 @@ class ScreenshareComponent extends React.Component {
       // Volume control hover toolbar
       showHoverToolBar: false,
     };
-    logger.debug(
-      { logCode: 'screen share' },
-      'In Screen Share'
-    );
 
     this.onLoadedData = this.onLoadedData.bind(this);
     this.handleAllowAutoplay = this.handleAllowAutoplay.bind(this);

@@ -14,6 +14,7 @@ import ScreenshareComponent from './component';
 import LayoutContext from '../layout/context';
 import getFromUserSettings from '/imports/ui/services/users-settings';
 import { shouldEnableVolumeControl } from './service';
+import logger from '/imports/startup/client/logger';
 
 const ScreenshareContainer = (props) => {
   const fullscreenElementId = 'Screenshare';
@@ -25,6 +26,11 @@ const ScreenshareContainer = (props) => {
   const fullscreenContext = (element === fullscreenElementId);
 
   if (isVideoBroadcasting()) {
+    logger.debug(
+      { logCode: 'screen share' },
+      'Rendering Screen Share'
+    );
+
     return (
       <ScreenshareComponent
         {

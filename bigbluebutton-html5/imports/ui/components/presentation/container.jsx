@@ -16,6 +16,7 @@ import getFromUserSettings from '/imports/ui/services/users-settings';
 import LayoutContext from '../layout/context';
 import WhiteboardService from '/imports/ui/components/whiteboard/service';
 import { DEVICE_TYPE } from '../layout/enums';
+import logger from '/imports/startup/client/logger';
 
 const PresentationContainer = ({ presentationPodIds, mountPresentation, ...props }) => {
   const fullscreenElementId = 'Presentation';
@@ -37,6 +38,11 @@ const PresentationContainer = ({ presentationPodIds, mountPresentation, ...props
   const currentUser = users[Auth.meetingID][Auth.userID];
 
   const userIsPresenter = (podId === 'DEFAULT_PRESENTATION_POD') ? currentUser.presenter : props.isPresenter;
+
+  logger.debug(
+    { logCode: 'presentation' },
+    'Rendering Presentation'
+  );
 
   return (
     <Presentation
