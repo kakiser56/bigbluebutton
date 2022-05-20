@@ -27,7 +27,6 @@ import {
 import { ACTIONS } from '/imports/ui/components/layout/enums';
 import deviceInfo from '/imports/utils/deviceInfo';
 import Settings from '/imports/ui/services/settings';
-import logger from '/imports/startup/client/logger';
 
 const intlMessages = defineMessages({
   screenShareLabel: {
