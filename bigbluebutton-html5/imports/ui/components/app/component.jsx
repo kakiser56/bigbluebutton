@@ -443,28 +443,12 @@ class App extends Component {
     const { layoutType } = this.props;
     switch (layoutType) {
       case LAYOUT_TYPE.CUSTOM_LAYOUT:
-        logger.debug(
-          { logCode: 'Layout' },
-          'Layout is custom'
-        );
         return <CustomLayout />;
       case LAYOUT_TYPE.SMART_LAYOUT:
-        logger.debug(
-          { logCode: 'Layout' },
-          'Layout is smart'
-        );
         return <SmartLayout />;
       case LAYOUT_TYPE.PRESENTATION_FOCUS:
-        logger.debug(
-          { logCode: 'Layout' },
-          'Layout is presentation'
-        );
         return <PresentationFocusLayout />;
       case LAYOUT_TYPE.VIDEO_FOCUS:
-        logger.debug(
-          { logCode: 'Layout' },
-          'Layout is video'
-        );
         return <VideoFocusLayout />;
       default:
         return <CustomLayout />;
@@ -482,6 +466,11 @@ class App extends Component {
       shouldShowExternalVideo,
       isPresenter,
     } = this.props;
+
+    logger.debug(
+      { logCode: 'App' },
+      'App - should show presentation ' + shouldShowPresentation + ' is presenter ' + isPresenter + ' should show screen share ' + shouldShowScreenshare
+    );
 
     return (
       <>
