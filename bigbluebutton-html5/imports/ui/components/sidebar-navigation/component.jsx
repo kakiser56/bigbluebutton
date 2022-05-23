@@ -92,6 +92,7 @@ const SidebarNavigation = (props) => {
   };
 
   return (
+    /*
     <Resizable
       minWidth={myMinWidth}
       maxWidth={maxWidth}
@@ -129,9 +130,19 @@ const SidebarNavigation = (props) => {
         width: myWidth,
         height : myHeight,    
       }}
-    >
-      <UserListContainer />
-    </Resizable>
+    >*/
+      <UserListContainer 
+        style={{
+          position: 'absolute',
+          top : top,
+          left : left,
+          right : right,
+          zIndex : zIndex,
+          width: myWidth,
+          height : myHeight,    
+        }}
+      />
+    /*</Resizable>*/
   );
 };
 
