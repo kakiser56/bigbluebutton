@@ -10,7 +10,6 @@ import {
   isVideoBroadcasting,
   isGloballyBroadcasting,
   amIPresenter,
-  amIPresenter,
 } from './service';
 import ScreenshareComponent from './component';
 import LayoutContext from '../layout/context';
