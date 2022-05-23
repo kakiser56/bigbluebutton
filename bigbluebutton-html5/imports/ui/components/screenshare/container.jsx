@@ -26,7 +26,7 @@ const ScreenshareContainer = (props) => {
   const { screenShare } = output;
   const { element } = fullscreen;
   const fullscreenContext = (element === fullscreenElementId);
-  const amIPresenter = amIPresenter();
+  const amIPresenting = amIPresenter();
 
   if (isVideoBroadcasting()) {
     logger.debug(
@@ -35,7 +35,7 @@ const ScreenshareContainer = (props) => {
     );
 
     return (
-      amIPresenter ? null :
+      amIPresenting ? null :
         <ScreenshareComponent
         {
         ...{
