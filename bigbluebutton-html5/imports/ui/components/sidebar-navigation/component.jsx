@@ -57,7 +57,7 @@ const SidebarNavigation = (props) => {
 
   logger.debug(
     { logCode: 'presenter' },
-    'SideBarNavigation min width is ' + myMinWidth + ' width is  ' + myWidth + ' window width is ' + window.innerWidth
+    'SideBarNavigation my width is  ' + myWidth + ' my height is ' + height
   );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
