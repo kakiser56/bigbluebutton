@@ -9,7 +9,6 @@ import MediaService, {
 import {
   isVideoBroadcasting,
   isGloballyBroadcasting,
-  amIPresenter,
 } from './service';
 import ScreenshareComponent from './component';
 import LayoutContext from '../layout/context';
@@ -25,7 +24,6 @@ const ScreenshareContainer = (props) => {
   const { screenShare } = output;
   const { element } = fullscreen;
   const fullscreenContext = (element === fullscreenElementId);
-  const amIPresenter = amIPresenter();
   const isPresenter = props.isPresenter;
 
   if (isVideoBroadcasting()) {
