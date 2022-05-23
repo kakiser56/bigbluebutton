@@ -121,6 +121,19 @@ const SidebarContent = (props) => {
   const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
+    amIPresenter == true ?
+    <ChatContainer 
+    style={{
+      position: 'absolute',
+      top : top,
+      left : myLeft,
+      right : right,
+      zIndex : zIndex,
+      width: myWidth,
+      height : myHeight,    
+    }}
+/>
+    :
     <Resizable
       minWidth={myMinWidth}
       maxWidth={maxWidth}
