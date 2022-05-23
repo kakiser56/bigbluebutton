@@ -21,6 +21,7 @@ const CHAT_CLEAR = CHAT_CONFIG.system_messages_keys.chat_clear;
 const SYSTEM_CHAT_TYPE = CHAT_CONFIG.type_system;
 const ROLE_MODERATOR = Meteor.settings.public.user.role_moderator;
 const DEBOUNCE_TIME = 1000;
+const amIPresenter = ChatService.amIPresenter();
 
 const sysMessagesIds = {
   welcomeId: `${SYSTEM_CHAT_TYPE}-welcome-msg`,
@@ -240,6 +241,7 @@ const ChatContainer = (props) => {
       layoutContextDispatch,
       lastTimeWindowValuesBuild,
       partnerIsLoggedOut,
+      amIPresenter,
     }}
     >
       {children}

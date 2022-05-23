@@ -187,6 +187,17 @@ const getStats = async () => {
   return { screenshareStats };
 };
 
+const amIPresenter = () => {
+  const currentUser = Users.findOne({ userId: Auth.userID },
+    { fields: { presenter: 1 } });
+
+  if (!currentUser) {
+    return false;
+  }
+
+  return currentUser.presenter;
+};
+
 export {
   SCREENSHARE_MEDIA_ELEMENT_NAME,
   isVideoBroadcasting,
@@ -205,4 +216,5 @@ export {
   setVolume,
   getVolume,
   shouldEnableVolumeControl,
+  amIPresenter,
 };

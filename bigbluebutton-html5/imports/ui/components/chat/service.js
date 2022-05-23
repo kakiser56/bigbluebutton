@@ -323,6 +323,17 @@ const removePackagedClassAttribute = (classnames, attribute) => {
   });
 };
 
+const amIPresenter = () => {
+  const currentUser = Users.findOne({ userId: Auth.userID },
+    { fields: { presenter: 1 } });
+
+  if (!currentUser) {
+    return false;
+  }
+
+  return currentUser.presenter;
+};
+
 export default {
   setUserSentMessage,
   mapGroupMessage,
@@ -345,4 +356,5 @@ export default {
   getLastMessageTimestampFromChatList,
   UnsentMessagesCollection,
   removePackagedClassAttribute,
+  amIPresenter,
 };
