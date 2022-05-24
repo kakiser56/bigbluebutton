@@ -49,6 +49,7 @@ class UserContent extends PureComponent {
       sidebarContentPanel,
       layoutContextDispatch,
       startedChats,
+      amIPresenter,
     } = this.props;
 
     return (
@@ -56,7 +57,7 @@ class UserContent extends PureComponent {
         data-test="userListContent"
         className={styles.content}
       >
-        {CHAT_ENABLED
+        {CHAT_ENABLED && !amIPresenter
           ? (
             <UserMessagesContainer
               {...{

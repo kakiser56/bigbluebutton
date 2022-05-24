@@ -75,6 +75,7 @@ class UserList extends PureComponent {
             roving,
             hasBreakoutRoom,
             requestUserInformation,
+            amIPresenter,
           }
           }
         />}
