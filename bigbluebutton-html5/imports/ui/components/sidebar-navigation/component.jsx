@@ -55,15 +55,10 @@ const SidebarNavigation = (props) => {
     myMinWidth = myWidth;
   }
 
-  let myHeight = height;
-  if (myHeight == 0) {
-    myHeight = window.innerHeight;
-  }
-
-  logger.debug(
-    { logCode: 'presenter' },
-    'SideBarNavigation my width is  ' + myWidth + ' my height is ' + myHeight + ' window height is ' + window.innerHeight
-  );
+ // logger.debug(
+ //   { logCode: 'presenter' },
+ //   'SideBarNavigation my width = ' + myWidth
+ // );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
   const [isResizing, setIsResizing] = useState(false);
@@ -101,7 +96,7 @@ const SidebarNavigation = (props) => {
       right : right,
       zIndex : zIndex,
       width: myWidth,
-      height : myHeight,    
+      height : height,    
     }}
   /> :
 
@@ -110,7 +105,7 @@ const SidebarNavigation = (props) => {
       maxWidth={maxWidth}
       size={{
         width: myWidth,
-        height: myHeight,
+        height: height,
       }}
       enable={{
         top: isResizable && resizableEdge.top,
@@ -140,7 +135,7 @@ const SidebarNavigation = (props) => {
         right : right,
         zIndex : zIndex,
         width: myWidth,
-        height : myHeight,    
+        height : height,    
       }}
     >
       <UserListContainer />

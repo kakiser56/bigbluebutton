@@ -51,10 +51,10 @@ const SidebarContent = (props) => {
     amIPresenter,
   } = props;
 
-  logger.debug(
-    { logCode: 'presenter' },
-    'SideBarContent am presenter is  ' + amIPresenter
-  );
+//  logger.debug(
+//    { logCode: 'presenter' },
+//    'SideBarContent am presenter is  ' + amIPresenter
+//  );
 
   let myLeft = left;
   if (myLeft > 150) {
@@ -73,15 +73,10 @@ const SidebarContent = (props) => {
     myMinWidth = myWidth;
   }
 
-  let myHeight = height;
-  if (myHeight == 0) {
-    myHeight = window.innerHeight;
-  }
-
-  logger.debug(
-    { logCode: 'presenter' },
-    'SideBarContent my width is  ' + myWidth + ' my height is ' + myHeight + ' window height is ' + window.innerHeight
-  );
+//  logger.debug(
+//    { logCode: 'presenter' },
+//    'SideBarContent my width = ' + myWidth
+//  );
 
 
   const [resizableWidth, setResizableWidth] = useState(width);
@@ -130,7 +125,7 @@ const SidebarContent = (props) => {
       right : right,
       zIndex : zIndex,
       width: myWidth,
-      height : myHeight,    
+      height : height,    
     }}
 />
     :
@@ -141,7 +136,7 @@ const SidebarContent = (props) => {
       maxHeight={maxHeight}
       size={{
         width: myWidth,
-        height: myHeight,
+        height: height,
       }}
       enable={{
         top: isResizable && resizableEdge.top,
@@ -168,7 +163,7 @@ const SidebarContent = (props) => {
         right : right,
         zIndex : zIndex,
         width: myWidth,
-        height : myHeight,    
+        height : height,    
       }}
     >
       {sidebarContentPanel === PANELS.CHAT
