@@ -110,12 +110,6 @@ const screenshareHasStarted = () => {
   // Presenter's screen preview is local, so skip
   if (!UserListService.amIPresenter()) {
     viewScreenshare();
-  } else {
-    myWidth =  window.innerWidth * .30;
-    logger.debug(
-      { logCode: 'Screen Share' },
-      'Screen share started, resizing my width = ' + myWidth
-    );
   }
 };
 
@@ -132,6 +126,11 @@ const shareScreen = async (onFail) => {
     if(!UserListService.isUserPresenter(Auth.userID)) return MediaStreamUtils.stopMediaStreamTracks(stream);
     await KurentoBridge.share(stream, onFail);
     setSharingScreen(true);
+    myWidth =  window.innerWidth * .30;
+    logger.debug(
+      { logCode: 'Screen Share' },
+      'Screen share started, resizing my width = ' + myWidth
+    );
   } catch (error) {
     return onFail(error);
   }
