@@ -126,11 +126,13 @@ const shareScreen = async (onFail) => {
     if(!UserListService.isUserPresenter(Auth.userID)) return MediaStreamUtils.stopMediaStreamTracks(stream);
     await KurentoBridge.share(stream, onFail);
     setSharingScreen(true);
-    myWidth =  window.innerWidth * .30;
+    myWidth =  window.innerWidth * .2;
+    myHeight = window.innerHeight - 80;
     logger.debug(
       { logCode: 'Screen Share' },
       'Screen share started, resizing my width = ' + myWidth
     );
+    window.resizeTo(myWidth, myHeight);
   } catch (error) {
     return onFail(error);
   }
