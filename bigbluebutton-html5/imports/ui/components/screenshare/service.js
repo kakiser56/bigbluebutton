@@ -110,6 +110,12 @@ const screenshareHasStarted = () => {
   // Presenter's screen preview is local, so skip
   if (!UserListService.amIPresenter()) {
     viewScreenshare();
+  } else {
+    myWidth =  window.innerWidth * .30;
+    logger.debug(
+      { logCode: 'Screen Share' },
+      'Screen share started, resizing my width = ' + myWidth
+    );
   }
 };
 
