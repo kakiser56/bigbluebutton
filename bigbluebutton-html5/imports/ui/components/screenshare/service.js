@@ -127,7 +127,7 @@ const shareScreen = async (onFail) => {
     await KurentoBridge.share(stream, onFail);
     setSharingScreen(true);
     myWidth =  (screen.width -10) * .2;
-    myHeight = screen.height - 80;
+    myHeight = screen.height;
     logger.debug(
       { logCode: 'Screen Share' },
       'Screen share started, resizing my width = ' + myWidth + ' window width is ' + (window.innerWidth - 10)
