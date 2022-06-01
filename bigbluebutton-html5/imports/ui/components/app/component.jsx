@@ -487,8 +487,8 @@ class App extends Component {
           {this.renderUserInformation()}
           <BannerBarContainer />
           <NotificationsBarContainer />
-          <SidebarNavigationContainer />
-          <SidebarContentContainer />
+          {isPresenter ? <SidebarContentContainer /> : <SidebarNavigationContainer />}
+          {isPresenter ? <SidebarNavigationContainer /> : <SidebarContentContainer />}           
           <NavBarContainer main="new" />
           {this.renderWebcamsContainer()}
           {shouldShowPresentation && !isPresenter ? <PresentationAreaContainer /> : null}
