@@ -59,12 +59,15 @@ class UserList extends PureComponent {
 
     return (
       <div className={styles.userList}>
+        <span style={buttonStyle}>
         {
-          showBranding
-            && !compact
-            && CustomLogoUrl
-            ? <CustomLogo CustomLogoUrl={CustomLogoUrl} /> : null
+          <ScreenshareButtonContainer {...{
+            amIPresenter,
+            isMeteorConnected,
+          }}
+          />          
         }
+        </span>
         {<UserContentContainer
           {...{
             intl,
@@ -79,15 +82,6 @@ class UserList extends PureComponent {
           }
           }
         />}
-        <span style={buttonStyle}>
-        {
-          <ScreenshareButtonContainer {...{
-            amIPresenter,
-            isMeteorConnected,
-          }}
-          />          
-        }
-        </span>
       </div>
     );
   }
