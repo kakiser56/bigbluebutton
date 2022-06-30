@@ -87,7 +87,6 @@ const SidebarNavigation = (props) => {
   };
 
   return (
-    amIPresenter == true ?
     <UserListContainer 
     style={{
       position: 'absolute',
@@ -98,49 +97,8 @@ const SidebarNavigation = (props) => {
       width: myWidth,
       height : height,    
     }}
-  /> :
-
-    <Resizable
-      minWidth={myMinWidth}
-      maxWidth={maxWidth}
-      size={{
-        width: myWidth,
-        height: height,
-      }}
-      enable={{
-        top: isResizable && resizableEdge.top,
-        left: isResizable && resizableEdge.left,
-        bottom: isResizable && resizableEdge.bottom,
-        right: isResizable && resizableEdge.right,
-      }}
-      handleStyles={{
-        right: {
-          right: '-8px',
-        },
-      }}
-      handleWrapperClass="resizeSidebarNavWrapper"
-      onResizeStart={() => {
-        setIsResizing(true);
-        setResizeStartWidth(resizableWidth);
-      }}
-      onResize={(...[, , , delta]) => setSidebarNavWidth(delta.width)}
-      onResizeStop={() => {
-        setIsResizing(false);
-        setResizeStartWidth(0);
-      }}
-      style={{
-        position: 'absolute',
-        top : top,
-        left : left,
-        right : right,
-        zIndex : zIndex,
-        width: myWidth,
-        height : height,    
-      }}
-    >
-      <UserListContainer />
-    </Resizable>
-  );
+  />
+  )
 };
 
 SidebarNavigation.propTypes = propTypes;
