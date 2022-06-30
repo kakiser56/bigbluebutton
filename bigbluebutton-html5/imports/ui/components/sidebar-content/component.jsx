@@ -51,6 +51,7 @@ const SidebarContent = (props) => {
     amIPresenter,
   } = props;
 
+  let useResize = false;
 //  logger.debug(
 //    { logCode: 'presenter' },
 //    'SideBarContent am presenter is  ' + amIPresenter
@@ -73,10 +74,10 @@ const SidebarContent = (props) => {
     myMinWidth = myWidth;
   }
 
-//  logger.debug(
-//    { logCode: 'presenter' },
-//    'SideBarContent my width = ' + myWidth
-//  );
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarContent my width = ' + myWidth
+  );
 
 
   const [resizableWidth, setResizableWidth] = useState(width);
@@ -116,7 +117,7 @@ const SidebarContent = (props) => {
   const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
-    amIPresenter == true ?
+    useResize == false ?
     <ChatContainer 
     style={{
       position: 'absolute',

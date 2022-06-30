@@ -40,6 +40,7 @@ const SidebarNavigation = (props) => {
     amIPresenter,
   } = props;
 
+  let useResize = false;
   let myWidth = width;
 
   if (myWidth > 150 && !amIPresenter) {
@@ -55,10 +56,10 @@ const SidebarNavigation = (props) => {
     myMinWidth = myWidth;
   }
 
- // logger.debug(
- //   { logCode: 'presenter' },
- //   'SideBarNavigation my width = ' + myWidth
- // );
+  logger.debug(
+    { logCode: 'presenter' },
+    'SideBarNavigation my width = ' + myWidth
+  );
 
   const [resizableWidth, setResizableWidth] = useState(myWidth);
   const [isResizing, setIsResizing] = useState(false);
@@ -87,7 +88,7 @@ const SidebarNavigation = (props) => {
   };
 
   return (
-    amIPresenter == true ?
+    useResize == false ?
     <UserListContainer 
     style={{
       position: 'absolute',
