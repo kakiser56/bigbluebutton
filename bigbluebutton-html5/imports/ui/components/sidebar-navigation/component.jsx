@@ -41,15 +41,10 @@ const SidebarNavigation = (props) => {
   } = props;
 
   let useResize = false;
-  let myWidth = width;
-
-  if (myWidth > 150 && !amIPresenter) {
-    myWidth = 150;
-  }
-
-  if (amIPresenter) {
-    myWidth =  window.innerWidth * .30;
-  }
+  let myLeft = 0;
+  let myTop = window.innerHeight * .50;
+  let myWidth = window.innerWidth * .70;
+  let myHeight = window.innerHeight * .50;
 
   let myMinWidth = minWidth;
   if (minWidth > myWidth) {
@@ -93,12 +88,12 @@ const SidebarNavigation = (props) => {
       <div
       style={{
         position: 'absolute',
-        top : top,
-        left : left,
+        top : myTop,
+        left : myLeft,
         right : right,
         zIndex : zIndex,
         width: myWidth,
-        height : height,    
+        height : myHeight,    
       }}
       ><UserListContainer></UserListContainer></div>
     </>

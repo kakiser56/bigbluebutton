@@ -57,18 +57,11 @@ const SidebarContent = (props) => {
 //    'SideBarContent am presenter is  ' + amIPresenter
 //  );
 
-  let myLeft = left;
-  if (myLeft > 150) {
-    myLeft = 150;
-  }
-
-  let myWidth = width;
-  // if presenting, make chat window 70% of window width, and left to be 30% over
-  if (amIPresenter) {
-    myLeft = window.innerWidth * .30;
-    myWidth = window.innerWidth * .70;
-  }
-
+  let myLeft = 0;
+  let myTop = 0;
+  let myWidth = window.innerWidth * .70;
+  let myHeight = window.innerHeight * .50;
+  
   let myMinWidth = minWidth;
   if (minWidth > myWidth) {
     myMinWidth = myWidth;
@@ -126,12 +119,12 @@ const SidebarContent = (props) => {
       <div
       style={{
         position: 'absolute',
-        top : top,
+        top : myTop,
         left : myLeft,
         right : right,
         zIndex : zIndex,
         width: myWidth,
-        height : height,    
+        height : myHeight,    
       }}
     ><ChatContainer></ChatContainer></div>
     </>
