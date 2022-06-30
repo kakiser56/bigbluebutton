@@ -51,13 +51,13 @@ class UserContent extends PureComponent {
       startedChats,
       amIPresenter,
     } = this.props;
-
+    let showMessages = false;
     return (
       <div
         data-test="userListContent"
         className={styles.content}
       >
-        {CHAT_ENABLED && !amIPresenter
+        {showMessages
           ? (
             <UserMessagesContainer
               {...{
