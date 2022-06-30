@@ -43,7 +43,7 @@ const SidebarNavigation = (props) => {
   let useResize = false;
   let myLeft = 0;
   let myTop = window.innerHeight * .50;
-  let myWidth = window.innerWidth * .70;
+  let myWidth = window.innerWidth * .20;
   let myHeight = window.innerHeight * .50;
 
   let myMinWidth = minWidth;

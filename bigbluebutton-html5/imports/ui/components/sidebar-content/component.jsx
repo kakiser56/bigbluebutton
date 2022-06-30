@@ -59,7 +59,7 @@ const SidebarContent = (props) => {
 
   let myLeft = 0;
   let myTop = 0;
-  let myWidth = window.innerWidth * .70;
+  let myWidth = window.innerWidth * .20;
   let myHeight = window.innerHeight * .50;
   
   let myMinWidth = minWidth;
