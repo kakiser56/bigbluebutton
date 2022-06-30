@@ -94,7 +94,7 @@ const SidebarNavigation = (props) => {
       style={{
         position: 'absolute',
         top : top,
-        left : myLeft,
+        left : left,
         right : right,
         zIndex : zIndex,
         width: myWidth,
