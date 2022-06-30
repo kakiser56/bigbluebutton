@@ -116,7 +116,6 @@ const SidebarContent = (props) => {
   const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
-    amIPresenter == true ?
     <ChatContainer 
     style={{
       position: 'absolute',
@@ -127,64 +126,7 @@ const SidebarContent = (props) => {
       width: myWidth,
       height : height,    
     }}
-/>
-    :
-    <Resizable
-      minWidth={myMinWidth}
-      maxWidth={maxWidth}
-      minHeight={minHeight}
-      maxHeight={maxHeight}
-      size={{
-        width: myWidth,
-        height: height,
-      }}
-      enable={{
-        top: isResizable && resizableEdge.top,
-        left: isResizable && resizableEdge.left,
-        bottom: isResizable && resizableEdge.bottom,
-        right: isResizable && resizableEdge.right,
-      }}
-      handleWrapperClass="resizeSidebarContentWrapper"
-      onResizeStart={() => {
-        setIsResizing(true);
-        setResizeStartWidth(resizableWidth);
-        setResizeStartHeight(resizableHeight);
-      }}
-      onResize={(...[, , , delta]) => setSidebarContentSize(delta.width, delta.height)}
-      onResizeStop={() => {
-        setIsResizing(false);
-        setResizeStartWidth(0);
-        setResizeStartHeight(0);
-      }}
-      style={{
-        position: 'absolute',
-        top : top,
-        left : myLeft,
-        right : right,
-        zIndex : zIndex,
-        width: myWidth,
-        height : height,    
-      }}
-    >
-      {sidebarContentPanel === PANELS.CHAT
-      && (
-      <ErrorBoundary
-        Fallback={FallbackView}
-      >
-        <ChatContainer />
-      </ErrorBoundary>
-      )}
-      {sidebarContentPanel === PANELS.SHARED_NOTES && <NoteContainer />}
-      {sidebarContentPanel === PANELS.CAPTIONS && <CaptionsContainer />}
-      {sidebarContentPanel === PANELS.POLL
-        && (
-          <div className={styles.poll} style={{ myMinWidth, top: '0' }} id="pollPanel">
-            <PollContainer smallSidebar={smallSidebar} />
-          </div>
-        )}
-      {sidebarContentPanel === PANELS.BREAKOUT && <BreakoutRoomContainer />}
-      {sidebarContentPanel === PANELS.WAITING_USERS && <WaitingUsersPanel />}
-    </Resizable>
+    />
   );
 };
 
