@@ -97,6 +97,9 @@ class ScreenshareComponent extends React.Component {
 
     this.volume = getVolume();
     this.mobileHoverSetTimeout = null;
+    this.myLeft = window.innerWidth * .20;
+    this.myWidth = window.innerWidth * .80;
+  
   }
 
   componentDidMount() {
@@ -461,10 +464,10 @@ class ScreenshareComponent extends React.Component {
             position: 'absolute',
             display,
             top,
-            left,
+            left:this.myLeft,
             right,
             height,
-            width,
+            width:this.myWidth,
             zIndex: fullscreenContext ? zIndex : undefined,
             backgroundColor: '#06172A',
           }
