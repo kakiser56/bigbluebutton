@@ -114,21 +114,27 @@ const SidebarContent = (props) => {
     });
   };
 
+  const DIV = () => {
+    return
+  }
+
   const smallSidebar = myWidth < (maxWidth / 2);
 
   return (
     useResize == false ?
-    <ChatContainer 
-    style={{
-      position: 'absolute',
-      top : top,
-      left : myLeft,
-      right : right,
-      zIndex : zIndex,
-      width: myWidth,
-      height : height,    
-    }}
-/>
+    <>
+      <div
+      style={{
+        position: 'absolute',
+        top : top,
+        left : myLeft,
+        right : right,
+        zIndex : zIndex,
+        width: myWidth,
+        height : height,    
+      }}
+    ><ChatContainer></ChatContainer></div>
+    </>
     :
     <Resizable
       minWidth={myMinWidth}

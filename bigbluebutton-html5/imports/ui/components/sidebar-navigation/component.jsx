@@ -89,18 +89,20 @@ const SidebarNavigation = (props) => {
 
   return (
     useResize == false ?
-    <UserListContainer 
-    style={{
-      position: 'absolute',
-      top : top,
-      left : left,
-      right : right,
-      zIndex : zIndex,
-      width: myWidth,
-      height : height,    
-    }}
-  /> :
-
+    <>
+      <div
+      style={{
+        position: 'absolute',
+        top : top,
+        left : myLeft,
+        right : right,
+        zIndex : zIndex,
+        width: myWidth,
+        height : height,    
+      }}
+      ><UserListContainer></UserListContainer></div>
+    </>
+   :
     <Resizable
       minWidth={myMinWidth}
       maxWidth={maxWidth}
