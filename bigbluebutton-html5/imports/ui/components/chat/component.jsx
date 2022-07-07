@@ -71,30 +71,6 @@ const Chat = (props) => {
           data-test="chatTitle"
           className={styles.title}
         >
-          {amIPresenter ? null : 
-          <Button
-          onClick={() => {
-            layoutContextDispatch({
-              type: ACTIONS.SET_SIDEBAR_CONTENT_IS_OPEN,
-              value: false,
-            });
-            layoutContextDispatch({
-              type: ACTIONS.SET_ID_CHAT_OPEN,
-              value: '',
-            });
-            layoutContextDispatch({
-              type: ACTIONS.SET_SIDEBAR_CONTENT_PANEL,
-              value: PANELS.NONE,
-            });
-          }}
-          aria-label={intl.formatMessage(intlMessages.hideChatLabel, { 0: title })}
-          accessKey={chatID !== 'public' ? HIDE_CHAT_AK : null}
-          data-test={isPublicChat ? 'hidePublicChat' : 'hidePrivateChat'}
-          label={title}
-          icon="left_arrow"
-          className={styles.hideBtn}
-        />
-        }
         </div>
         {
           !isPublicChat
