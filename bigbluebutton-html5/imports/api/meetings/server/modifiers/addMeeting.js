@@ -41,7 +41,8 @@ export default function addMeeting(meeting) {
   check(meetingId, String);
   check(meeting, {
     breakoutProps: {
-      sequence: Number,
+  	  enabled: Boolean,
+	    sequence: Number,
       freeJoin: Boolean,
       breakoutRooms: Array,
       parentId: String,
@@ -51,12 +52,9 @@ export default function addMeeting(meeting) {
     meetingProp: {
       intId: String,
       extId: String,
-      meetingCameraCap: Number,
-      maxPinnedCameras: Number,
       isBreakout: Boolean,
       name: String,
-      disabledFeatures: Array,
-      notifyRecordingIsOn: Boolean,
+    	learningDashboardEnabled: Boolean,
     },
     usersProp: {
       webcamsOnlyForModerator: Boolean,
@@ -67,6 +65,7 @@ export default function addMeeting(meeting) {
       allowModsToUnmuteUsers: Boolean,
       allowModsToEjectCameras: Boolean,
       meetingLayout: String,
+	    virtualBackgroundsDisabled: Boolean,
     },
     durationProps: {
       createdTime: Number,
@@ -101,6 +100,11 @@ export default function addMeeting(meeting) {
       dialNumber: String,
       telVoice: String,
       muteOnStart: Boolean,
+    },
+    screenshareProps: {
+      red5ScreenshareIp: String,
+      red5ScreenshareApp: String,
+      screenshareConf: String,
     },
     metadataProp: Object,
     lockSettingsProps: {
