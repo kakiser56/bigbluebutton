@@ -60,7 +60,7 @@ const SidebarContent = (props) => {
   let myLeft = 0;
   let myTop = 0;
   let myWidth = amIPresenter ? window.innerWidth : window.innerWidth * .20;
-  let myHeight = window.innerHeight * .50;
+  let myHeight = window.innerHeight * .70;
   
 
   let myMinWidth = minWidth;
