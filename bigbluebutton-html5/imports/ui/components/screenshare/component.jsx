@@ -10,7 +10,7 @@ import AutoplayOverlay from '../media/autoplay-overlay/component';
 import logger from '/imports/startup/client/logger';
 import playAndRetry from '/imports/utils/mediaElementPlayRetry';
 import { notify } from '/imports/ui/services/notification';
-import FullscreenService from '../../fullscreen-button/service';
+import FullscreenService from '/imports/ui/components/fullscreen-button/service';
 
 import {
   SCREENSHARE_MEDIA_ELEMENT_NAME,
