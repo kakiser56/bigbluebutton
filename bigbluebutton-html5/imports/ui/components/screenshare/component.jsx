@@ -10,6 +10,8 @@ import AutoplayOverlay from '../media/autoplay-overlay/component';
 import logger from '/imports/startup/client/logger';
 import playAndRetry from '/imports/utils/mediaElementPlayRetry';
 import { notify } from '/imports/ui/services/notification';
+import FullscreenService from '../../fullscreen-button/service';
+
 import {
   SCREENSHARE_MEDIA_ELEMENT_NAME,
   screenshareHasEnded,
@@ -109,6 +111,7 @@ class ScreenshareComponent extends React.Component {
       layoutContextDispatch,
       intl,
       hidePresentation,
+      fullscreenElementId,
     } = this.props;
 
     screenshareHasStarted();
@@ -137,6 +140,8 @@ class ScreenshareComponent extends React.Component {
         value: true,
       });
     }
+
+    FullscreenService.toggleFullScreen(fullscreenElementId);
   }
 
   componentDidUpdate(prevProps) {
