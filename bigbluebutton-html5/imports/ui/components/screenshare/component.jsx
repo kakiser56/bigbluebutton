@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import { defineMessages, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -140,12 +141,14 @@ class ScreenshareComponent extends React.Component {
         value: true,
       });
     }
+    const node = ReactDOM.findDOMNode(this);
+
     logger.debug(
       { logCode: 'screen share' },
-      'Toggle full screen for element ' + this 
+      'Toggle full screen for element ' + node
     );
 
-    FullscreenService.toggleFullScreen(this);
+    FullscreenService.toggleFullScreen(node);
   }
 
   componentDidUpdate(prevProps) {
