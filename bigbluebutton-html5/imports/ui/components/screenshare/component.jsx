@@ -140,6 +140,10 @@ class ScreenshareComponent extends React.Component {
         value: true,
       });
     }
+    logger.debug(
+      { logCode: 'screen share' },
+      'Toggle full screen for element ' + fullscreenElementId 
+    );
 
     FullscreenService.toggleFullScreen(fullscreenElementId);
   }
