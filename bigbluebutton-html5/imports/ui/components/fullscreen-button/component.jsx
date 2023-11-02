@@ -6,6 +6,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
 import { ACTIONS } from '../layout/enums';
+import logger from '/imports/startup/client/logger';
 
 const intlMessages = defineMessages({
   fullscreenButton: {
