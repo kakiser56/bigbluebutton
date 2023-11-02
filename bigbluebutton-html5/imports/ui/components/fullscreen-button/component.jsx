@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRef, useEffect } from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import Button from '/imports/ui/components/button/component';
 import cx from 'classnames';
@@ -64,6 +65,18 @@ const FullscreenButtonComponent = ({
   handleToggleFullScreen,
 }) => {
   if (isIphone) return null;
+
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    logger.debug(
+      { logCode: 'screen share' },
+      'Clicking on full screen button '
+    );
+
+    const button = buttonRef.current;
+    button.click();
+  },[])
 
   const formattedLabel = (fullscreen) => (fullscreen
     ? intl.formatMessage(
