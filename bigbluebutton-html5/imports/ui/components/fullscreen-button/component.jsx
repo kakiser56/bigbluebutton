@@ -75,8 +75,7 @@ const FullscreenButtonComponent = ({
       'Clicking on full screen button '
     );
 
-    const button = buttonRef.current;
-    button.click();
+    handleClick();
   },[])
 
   const formattedLabel = (fullscreen) => (fullscreen
