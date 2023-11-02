@@ -70,12 +70,19 @@ const FullscreenButtonComponent = ({
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    logger.debug(
-      { logCode: 'screen share' },
-      'Clicking on full screen button '
-    );
-
-    handleClick();
+    if (!isFullscreen) {
+      logger.debug(
+        { logCode: 'screen share' },
+        'Not full screen so clicking on full screen button '
+      );
+  
+      handleClick();  
+    } else {
+      logger.debug(
+        { logCode: 'screen share' },
+        'Already full screen ignoring '
+      );
+    }
   },[])
 
   const formattedLabel = (fullscreen) => (fullscreen
