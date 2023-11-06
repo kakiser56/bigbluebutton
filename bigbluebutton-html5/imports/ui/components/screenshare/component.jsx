@@ -142,6 +142,7 @@ class ScreenshareComponent extends React.Component {
       });
     }
     const node = ReactDOM.findDOMNode(this);
+    //node.childNodes.forEach
 
     logger.debug(
       { logCode: 'screen share' },
